@@ -14,6 +14,9 @@ fn ch1_command()->Command {
     /* ... */
 
     Command::new( "v")
+    .action(||{
+        println!("some v...") ;
+    })
 }
 
 #[test]
