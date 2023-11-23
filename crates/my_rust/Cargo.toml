@@ -7,4 +7,6 @@ edition = "2021"
 
 [dependencies]
 
-inventory = "0.3"
+# inventory = "0.3"
+
+linkme = "0.3"

@@ -8,12 +8,10 @@ use crate::{Command, COMMADNS};
 use linkme::distributed_slice;
 
 #[distributed_slice(COMMADNS)]
-static BENCH_DESERIALIZE: fn()->Command = ch1_command;
-
 fn ch1_command()->Command {
     /* ... */
 
-    Command::new( "v")
+    Command::new( "v2")
 }
 
 #[test]

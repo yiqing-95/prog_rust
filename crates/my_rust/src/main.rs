@@ -1,4 +1,5 @@
 pub mod ch1;
+pub mod ch2;
 
 // pub type Action = fn(&Context);
 pub type Action = fn( );
@@ -16,7 +17,9 @@ pub struct Command {
 
 // impl Flag {
 impl Command {
-    pub const  fn new( name: &'static str) -> Self {
+    // TODO: 学习const函数的特点 为啥不能使用Default::default
+    // pub const  fn new( name: &'static str) -> Self {
+    pub    fn new( name: &'static str) -> Self {
         Self {
             // short,
             name,
@@ -30,16 +33,32 @@ impl Command {
     }
 }
 
-inventory::collect!(Command);
+// inventory::collect!(Command);
+// 关于linkme的用法 @see https://github.com/dtolnay/linkme
+use linkme::distributed_slice;
+
+#[distributed_slice]
+// pub static BENCHMARKS: [fn(&mut Bencher)];
+// TODO: 可以把通用依赖通过为fn添加Context App之类方法传递进去 fn(Context ...)->Command
+pub static COMMADNS: [ fn()->Command ];
 
 fn main() {
     println!("Hello, world!");
 
-    for cmd in inventory::iter::<Command> {
-        // println!("-{}, --{}", cmd.short, cmd.name);
+    // for cmd in inventory::iter::<Command> {
+    //     // println!("-{}, --{}", cmd.short, cmd.name);
+    //     println!(" cmd name: --{}",   cmd.name);
+    // }
+
+     // Iterate the elements.
+     for cmd_fn in COMMADNS {
+        /* ... */
+        let cmd = cmd_fn() ;
         println!(" cmd name: --{}",   cmd.name);
     }
 }
+
+
 
 fn gcd(mut n: u64, mut m: u64) -> u64 {
     assert!(n != 0 && m != 0);
