@@ -1,0 +1,24 @@
+[workspace] 
+members = [
+    # ".",
+
+    # "libs/*",
+    # "libs/mylib" 
+    # 
+    # "projects/*",
+    # 
+    # "crates/*",
+    "crates/my_rust",
+]
+#  多个sqlite 库会干扰 运行时候排除下 
+# @see https://doc.rust-lang.org/cargo/reference/workspaces.html
+exclude = [
+    # "recipes/db_sqlite", 
+]
+
+
+
+resolver = "2"
+
+
+
