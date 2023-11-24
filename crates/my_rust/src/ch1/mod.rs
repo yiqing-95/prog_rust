@@ -1,3 +1,6 @@
+pub mod handling_command_line_arguments;
+pub mod actix_gcd;
+
 use crate::{Command, COMMADNS};
 
 // inventory::submit! {
@@ -19,5 +22,15 @@ fn ch1_command()->Command {
     })
 }
 
-#[test]
-fn test() {}
+
+#[distributed_slice(COMMADNS)]
+fn entry_command()->Command {
+    /* ... */
+
+    Command::new( "actix_gcd").action(||{
+    //    actix_gcd::run();
+    println!("异步运行actix服务器 TODO...");
+    actix_gcd::run() ;
+    })
+}
+
