@@ -14,6 +14,10 @@ fn ch1_command()->Command {
     /* ... */
 
     Command::new( "quickreplace")
+        .usage("  cargo run quickreplace  \"find\" \"replace\"  Cargo.toml Copy.toml")
+        .action(||{
+            quickreplace::run();
+        })
 }
 
 #[test]
