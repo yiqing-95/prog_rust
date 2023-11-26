@@ -15,8 +15,17 @@ fn main() {
             std::process::exit(1);
         }
     };
-    match fs::write(&args.output, &data) {
-        Ok(_) => {}
+
+    let replaced_data = match replace(&args.target, &args.replacement, &data) {
+        Ok(v) => v,
+        Err(e) => {
+            eprintln!("{} failed to replace text: {:?}",
+                      "Error:".red().bold(), e);
+            std::process::exit(1);
+        }
+    };
+    match fs::write(&args.output, &replaced_data) {
+        Ok(v) => v,
         Err(e) => {
             eprintln!("{} failed to write to file '{}': {:?}",
                       "Error:".red().bold(), args.filename, e);
