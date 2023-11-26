@@ -34,6 +34,19 @@ impl Command {
         self.action = Some(action);
         self
     }
+
+    /// Set usage of the command
+    ///
+    /// Example
+    ///
+    /// ```
+    /// let command = Command::new("cmd")
+    ///     .usage("cli cmd [arg]");
+    /// ```
+    pub fn usage<T: Into<String>>(mut self, usage: T) -> Self {
+        self.usage = Some(usage.into());
+        self
+    }
 }
 
 use core::panic;
@@ -123,6 +136,9 @@ fn help_command()->Command {
             //     /* ... */
                 let cmd = cmd_factory() ;
                 println!(" ——: {}",   cmd.name);
+                if cmd.usage.is_some() {
+                    println!("   usage: {}",   cmd.usage.unwrap());
+                }
     
                 
         }

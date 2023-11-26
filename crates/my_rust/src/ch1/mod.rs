@@ -41,7 +41,9 @@ fn mandelbrot_command()->Command {
     /* ... */
 
     //  cargo run mandelbrot mandel.png 4000x3000 -1.20,0.35 -1,0.20
-    Command::new( "mandelbrot").action(||{
+    Command::new( "mandelbrot")
+        .usage(" cargo run mandelbrot mandel.png 4000x3000 -1.20,0.35 -1,0.20")
+        .action(||{
         //    actix_gcd::run();
         println!("mandelbrot...>");
         mandelbrot::run() ;

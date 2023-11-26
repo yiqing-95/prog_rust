@@ -1,3 +1,5 @@
+mod quickreplace;
+
 use crate::{Command, COMMADNS};
 
 // inventory::submit! {
@@ -11,7 +13,7 @@ use linkme::distributed_slice;
 fn ch1_command()->Command {
     /* ... */
 
-    Command::new( "v2")
+    Command::new( "quickreplace")
 }
 
 #[test]
