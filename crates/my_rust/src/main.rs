@@ -10,9 +10,12 @@ pub type Action = fn();
 pub struct Command {
     // short: char,
     name: &'static str,
+    /// Command usage
+    pub usage: Option<String>,
     /* ... */
     /// Command action
     pub action: Option<Action>,
+
 }
 
 // impl Flag {
@@ -84,7 +87,7 @@ fn _main() {
     for cmd_fn in COMMADNS {
         //     /* ... */
             let cmd = cmd_fn() ;
-              println!(" cmd name: {}",   cmd.name);
+            //   println!(" cmd name: {}",   cmd.name);
               if   user_cmd.eq_ignore_ascii_case(cmd.name){
                 println!("OK do it !");
 
@@ -115,6 +118,7 @@ fn help_command()->Command {
 
     Command::new( "help")
     .action(||{
+        println!("all available commands:") ;
         for cmd_factory in COMMADNS {
             //     /* ... */
                 let cmd = cmd_factory() ;

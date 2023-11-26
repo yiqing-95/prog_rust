@@ -1,7 +1,7 @@
 use actix_web::{get, post, web, App, HttpResponse, HttpServer};
 use serde::Deserialize;
 
-// NOTE: Copy from internet: https://medium.com/@gitaeklee/rust-gcd-function-web-application-back-end-4128943a851b
+// 
 
 #[derive(Deserialize)]
 struct GcdParameters {

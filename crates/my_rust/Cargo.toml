@@ -14,3 +14,7 @@ linkme = "0.3"
 # 乖乖的锁版本 随便用新版本会出问题的
 actix-web = "4.4.0"
 serde = { version = "1.0", features = ["derive"] }
+
+num = "0.4"
+image = "0.13.0"
+crossbeam = "0.8"
