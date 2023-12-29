@@ -2,6 +2,15 @@ pub mod ch1;
 pub mod ch2;
 mod ch3;
 mod ch4;
+mod ch5;
+mod ch7;
+mod ch8;
+mod ch9;
+mod ch10;
+mod ch11;
+mod ch12;
+mod ch13;
+mod ch14;
 
 // pub type Action = fn(&Context);
 pub type Action = fn();

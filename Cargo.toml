@@ -1,5 +1,5 @@
 [workspace] 
-members = [
+members = [ "crates/hi_rbatis",
     # ".",
 
     # "libs/*",

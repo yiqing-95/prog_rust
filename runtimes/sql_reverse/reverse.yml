@@ -1,0 +1,9 @@
+host: 127.0.0.1
+port: 3306
+username: yiqing
+password: 'yiqing'
+database: test
+#schemaname: test # only postgres enable
+#include_tables: # Include tables, can be ignored.
+#exclude_tables: # Exclude, tables, can be ignored.
+output_dir: ./gen # code output directory
