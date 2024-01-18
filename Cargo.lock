@@ -1204,6 +1204,7 @@ dependencies = [
  "image",
  "linkme",
  "num",
+ "rand",
  "regex",
  "serde",
  "text-colorizer",
