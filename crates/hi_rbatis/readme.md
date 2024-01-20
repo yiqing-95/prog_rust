@@ -1,0 +1,1 @@
+https://github.com/avinassh/fast-sqlite3-inserts

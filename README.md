@@ -22,3 +22,4 @@
 
 ## 参考
 - [位操作](https://github.com/yujinliang/rust_learn/blob/master/bit_operations/README.md)
+- [rust 学习视频](https://www.youtube.com/c/BrooksBuilds)

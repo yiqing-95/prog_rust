@@ -34,3 +34,4 @@ Slices implement two of the three IntoIterator variants; since they don’t own 
 
 There are two important points to notice about iterator adapters.
 First, simply calling an adapter on an iterator doesn’t consume any items; it just returns a new iterator, ready to produce its own items by drawing from the first itera‐ tor as needed. In a chain of adapters, the only way to make any work actually get done is to call next on the final iterator.
+
