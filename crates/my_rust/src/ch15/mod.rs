@@ -1,5 +1,8 @@
 mod adapters;
 mod own_iter;
+mod bin_heaps;
+mod hash_maps;
+mod sets;
 
 fn triangle(n: i32) -> i32 {
     let mut sum = 0;
